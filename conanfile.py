@@ -33,12 +33,11 @@ set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="trantor")
         if self.options.shared:
-            cmake.build(target="BUILD_TRANTOR_SHARED=TRUE")
-        else:
-            cmake.build()
-        pass
+            cmake.definitions["BUILD_TRANTOR_SHARED"] = "On"
+            pass
+        cmake.configure(source_folder="trantor")
+        cmake.build()
 
         # Explicit way:
         # self.run('cmake %s/trantor %s'
