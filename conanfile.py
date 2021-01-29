@@ -35,6 +35,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
             tools.replace_in_file("trantor/CMakeLists.txt", "project(trantor)", 
                 '''project(trantor)
 set(BUILD_TRANTOR_SHARED true)''')
+            self.run("echo 'shared true !'")
+        else:
+            self.run("echo 'shared false !'")
             pass
 
     def build(self):
