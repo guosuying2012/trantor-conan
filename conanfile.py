@@ -31,15 +31,6 @@ conan_basic_setup()
 include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
 
-        if self.options.shared:
-            tools.replace_in_file("trantor/CMakeLists.txt", "project(trantor)", 
-                '''project(trantor)
-set(BUILD_TRANTOR_SHARED true)''')
-            self.run("echo 'shared true !'")
-        else:
-            self.run("echo 'shared false !'")
-            pass
-
     def build(self):
         cmake = CMake(self)
         cmake.configure(source_folder="trantor")
