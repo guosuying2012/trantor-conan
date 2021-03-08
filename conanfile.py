@@ -48,7 +48,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
         self.copy("*.h", dst="include", src="trantor")
         self.copy("*trantor.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
-        self.copy("*.so", dst="bin", keep_path=False)
+        self.copy("*.so", dst="lib", keep_path=False)
         self.copy("*.dylib", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
 
