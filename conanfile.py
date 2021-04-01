@@ -46,7 +46,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
 
     def package(self):
         self.copy("*.h", dst="include", src="trantor")
-        self.copy("*.h", dst="include", src="../exports")
+        self.copy("*.h", dst="include", src="exports")
         self.copy("*trantor.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
