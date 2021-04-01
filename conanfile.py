@@ -31,9 +31,6 @@ conan_basic_setup()
 include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
 
-        tools.replace_in_file("trantor/CMakeLists.txt", "generate_export_header", '''message(${CMAKE_CURRENT_BINARY_DIR})
-            generate_export_header''')
-
     def build(self):
         cmake = CMake(self)
         if self.options.shared:
@@ -49,6 +46,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
 
     def package(self):
         self.copy("*.h", dst="include", src="trantor")
+        self.copy("*.h", dst="include", src="../exports")
         self.copy("*trantor.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
