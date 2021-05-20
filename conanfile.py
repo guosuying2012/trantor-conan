@@ -31,6 +31,8 @@ conan_basic_setup()
 include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})''')
 
+        tools.replace_in_file("trantor/CMakeLists.txt", "c-ares_lib", '''cares''')
+
     def build(self):
         cmake = CMake(self)
         if self.options.shared:
