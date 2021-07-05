@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class TrantorConan(ConanFile):
     name = "trantor"
-    version = "1.4.1"
+    version = "1.5.0"
     license = "BSD"
     author = "an-tao"
     url = "https://github.com/an-tao/trantor"
